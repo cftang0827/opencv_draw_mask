@@ -15,11 +15,11 @@ img = cv2.imread('test.jpg')
 h, w, _ = img.shape
 img_mask = np.zeros((h, w), dtype=np.uint8)
 cv2.namedWindow('image')
-cv2.setMouseCallback('image', draw_circle, (img_mask))
+cv2.setMouseCallback('image', draw_circle)
 
 while (1):
     cv2.imshow('image', img)
-    if cv2.waitKey(1) & 0xFF == ord('q'):  #按q键退出
+    if cv2.waitKey(1) & 0xFF == ord('q'):  # press q to exit
         cv2.imwrite("mask.jpg", img_mask)
         break
 cv2.destroyAllWindows()
